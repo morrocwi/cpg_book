@@ -1,0 +1,461 @@
+document:
+  id: PRF-001
+  title: Personal Reasoning Foundation and Protocol
+  short_name: PRF
+  version: 1.0.0
+  status: draft
+  language:
+  - th
+  - en
+  owner: Yaoharee Lahtee
+  created_at: '2026-06-12'
+  last_reviewed_at: '2026-06-12'
+  review_cycle_days: 90
+  schema: personal_reasoning_foundation.schema.yaml
+  document_class: reasoning_foundation
+  execution_authority: none
+  normative_strength: interpretive_reference
+identity:
+  definition: A revisable, explicit model of a person's recurring ways of interpreting, judging, learning,
+    and correcting across situations.
+  thai_definition: แบบจำลองที่แก้ไขได้ของหลักคิดซึ่งเกิดซ้ำในการรับรู้ ตีความ ตัดสิน เรียนรู้ และแก้ไขของบุคคลข้ามหลายสถานการณ์
+  purpose:
+  - preserve distilled experience as reusable principles
+  - provide a shared interpretive language between one human and multiple AI systems
+  - make assumptions, boundaries, and standards of judgment visible
+  - support consistency without simulating or replacing the person
+  - allow principles to be criticized, revised, versioned, and extended
+  not_a:
+  - biography
+  - personality clone
+  - private chain-of-thought record
+  - workflow
+  - skill implementation
+  - tool instruction
+  - task prompt
+  - binding decision engine
+  - complete representation of the person
+philosophical_foundation:
+  personhood:
+    principle: A person is more than stored preferences, memories, roles, or outputs.
+    implication: The file may represent recurring reasoning patterns, but must never claim identity-equivalence
+      with the person.
+  epistemology:
+    principle: Knowledge is finite, situated, corrigible, and answerable to evidence.
+    implication: Confidence, fluency, status, and repetition do not independently establish truth.
+  hermeneutics:
+    principle: Meaning arises through the relation between content, context, language, and prior understanding.
+    implication: A principle should guide interpretation without erasing the particular context.
+  practical_wisdom:
+    principle: Good judgment cannot be reduced to rule execution alone.
+    implication: The file should preserve priorities, tensions, exceptions, and conditions for revision.
+  relational_ethics:
+    principle: Judgment is relational because decisions affect persons beyond the immediate speaker.
+    implication: Relevant affected persons, dignity, responsibility, and repairability should remain visible.
+  extended_mind:
+    principle: External artifacts can support human memory and reasoning without becoming the human.
+    implication: This file is a shared cognitive reference for humans and AI, not an autonomous mind.
+  intersubjectivity:
+    principle: Collaboration requires shared meanings and standards, not identical conclusions.
+    implication: Multiple AI systems may interpret differently while remaining coherent with common principles.
+core_equations:
+- id: EQ-PRF-01
+  name: Distillation
+  expression: PR_t = Distill(E_t, V_t, J_t, F_t, C_t)
+  terms:
+    PR_t: personal reasoning model at time t
+    E_t: experience
+    V_t: values
+    J_t: recurring judgment patterns
+    F_t: failures, feedback, and friction
+    C_t: corrections and learned constraints
+  meaning: Personal Reasoning is produced by distilling experience, not by copying biography.
+- id: EQ-PRF-02
+  name: Interpretive Lens
+  expression: I_i = Interpret_i(X | PR_t, D_i, K_i)
+  terms:
+    I_i: interpretation by human or AI system i
+    X: current situation
+    PR_t: personal reasoning reference
+    D_i: domain of interpreter i
+    K_i: available knowledge and context
+  meaning: The same foundation can be interpreted differently across domains without becoming a workflow.
+- id: EQ-PRF-03
+  name: Claim-Evidence Proportion
+  expression: ClaimStrength <= EvidenceStrength
+  terms:
+    ClaimStrength: strength or certainty of a claim
+    EvidenceStrength: quality, relevance, and sufficiency of supporting evidence
+  meaning: A conclusion must not be stated more strongly than its evidence permits.
+- id: EQ-PRF-04
+  name: Reasoning Continuity
+  expression: Coherence = Coherence(I_1, I_2, ..., I_n | PR_t)
+  terms:
+    Coherence: compatibility of interpretations with shared principles
+    I_1...I_n: interpretations from multiple humans or AI systems
+    PR_t: shared personal reasoning foundation
+  meaning: Different specialists may disagree while preserving a common reasoning grammar.
+- id: EQ-PRF-05
+  name: Revision
+  expression: PR_(t+1) = Revise(PR_t, NewEvidence, Critique, Outcome)
+  terms:
+    PR_(t+1): revised model
+    PR_t: current model
+    NewEvidence: newly available evidence
+    Critique: reasoned challenge
+    Outcome: observed consequence of prior use
+  meaning: The file is corrigible and must not freeze the person into a permanent model.
+- id: EQ-PRF-06
+  name: Non-Identity
+  expression: PR_t != Person
+  terms:
+    PR_t: documented reasoning model
+    Person: the living human person
+  meaning: The model represents selected reasoning patterns, never the whole person.
+core_principles:
+- id: PR-001
+  statement: Separate observed content, contextual interpretation, and governing protocol.
+  rationale: Many errors occur when a report, its interpretation, and the rule applied to it are treated
+    as one thing.
+  scope:
+  - general
+  - research
+  - operations
+  - people
+  - religious_advisory
+  counterexample: Treating a client's statement as verified institutional fact.
+  revision_trigger: A better distinction model is demonstrated across multiple cases.
+  stability: high
+- id: PR-002
+  statement: Confidence is not evidence, and capability is not authority.
+  rationale: Fluent systems and experienced people can still exceed what is justified or permitted.
+  scope:
+  - general
+  - AI_collaboration
+  - legal
+  - religious_advisory
+  - operations
+  counterexample: An AI infers that because it can read a legal document, it may determine binding legal
+    status.
+  revision_trigger: None for the distinction itself; domain-specific interpretations may evolve.
+  stability: constitutional
+- id: PR-003
+  statement: A conclusion is provisional when relevant uncertainty remains.
+  rationale: Making uncertainty visible prevents temporary interpretations from becoming false certainty.
+  scope:
+  - general
+  - research
+  - people
+  - operations
+  counterexample: Reporting a likely cause as the confirmed cause.
+  revision_trigger: New evidence resolves or changes the uncertainty.
+  stability: constitutional
+- id: PR-004
+  statement: The value of a person is not reducible to role fit, output, status, or one evaluation.
+  rationale: Operational judgment should not collapse human dignity into organizational utility.
+  scope:
+  - people
+  - HR
+  - leadership
+  - education
+  counterexample: Calling a team member incapable because they are unsuitable for one role.
+  revision_trigger: The wording may be refined, but the dignity distinction remains.
+  stability: constitutional
+- id: PR-005
+  statement: Consequences for affected persons belong inside the reasoning frame.
+  rationale: A technically correct answer may still be irresponsible if it ignores who bears the consequences.
+  scope:
+  - general
+  - people
+  - operations
+  - religious_advisory
+  counterexample: Optimizing a schedule without considering the burden placed on one team member.
+  revision_trigger: New categories of affected persons or harms are identified.
+  stability: high
+- id: PR-006
+  statement: Repairability is part of responsible judgment.
+  rationale: Good decisions preserve correction, appeal, rollback, or remedy when possible.
+  scope:
+  - general
+  - operations
+  - AI_collaboration
+  - people
+  counterexample: Making an irreversible external commitment from incomplete information.
+  revision_trigger: A domain requires a more specific concept of remedy or irreversibility.
+  stability: high
+- id: PR-007
+  statement: When critique reveals a mismatch, revise the model before defending the old output.
+  rationale: Self-protection can convert a correctable error into systematic distortion.
+  scope:
+  - general
+  - AI_collaboration
+  - leadership
+  - research
+  counterexample: Generating increasingly elaborate reasons to defend an answer after its premise was
+    disproven.
+  revision_trigger: Evidence shows that the critique itself is mistaken.
+  stability: constitutional
+- id: PR-008
+  statement: Shared principles support coherent collaboration without requiring identical conclusions.
+  rationale: Specialized AI systems see different parts of the same human context.
+  scope:
+  - multi_agent_AI
+  - organization
+  - human_AI_collaboration
+  counterexample: Forcing HR AI, COO AI, and advisory AI to produce the same interpretation despite different
+    domains.
+  revision_trigger: Observed collaboration failures reveal missing shared concepts.
+  stability: high
+- id: PR-009
+  statement: Personal Reasoning should guide interpretation, not predetermine action.
+  rationale: Turning principles into automatic action would confuse a reasoning foundation with workflow
+    or command logic.
+  scope:
+  - general
+  - AI_architecture
+  counterexample: Encoding 'religious question -> call Imam AI' as a personal reasoning principle.
+  revision_trigger: None; operational mappings belong in separate artifacts.
+  stability: constitutional
+- id: PR-010
+  statement: The file must remain revisable, attributable, and bounded.
+  rationale: A static or anonymous model can freeze the person, hide bias, and become unaccountable.
+  scope:
+  - general
+  - governance
+  - AI_architecture
+  counterexample: Treating an old reasoning file as the permanent and complete identity of its owner.
+  revision_trigger: Scheduled review, material life change, repeated mismatch, or new evidence.
+  stability: constitutional
+conceptual_distinctions:
+  prompt:
+    definition: A request or instruction for a particular task.
+    difference: A prompt says what is requested now; Personal Reasoning preserves reusable ways of interpreting
+      and judging.
+  workflow:
+    definition: A sequence of states, responsibilities, and transitions for completing work.
+    difference: A workflow organizes action; Personal Reasoning explains principles that may inform understanding
+      across many workflows.
+  skill:
+    definition: A bounded capability to perform a type of work.
+    difference: A skill concerns what a system can do; Personal Reasoning concerns how meaning, evidence,
+      limits, and responsibility are understood.
+  memory:
+    definition: Stored facts, preferences, events, and prior decisions.
+    difference: Memory records what happened or is preferred; Personal Reasoning records recurring standards
+      and patterns of judgment.
+  persona:
+    definition: A presentation style, tone, role, or character.
+    difference: Persona shapes expression; Personal Reasoning concerns the structure behind interpretation
+      and judgment.
+  policy:
+    definition: An organizational or institutional rule governing permitted conduct.
+    difference: Policy has formal scope and authority; Personal Reasoning is a personal interpretive reference
+      unless explicitly adopted elsewhere.
+  knowledge_base:
+    definition: A collection of facts, documents, sources, and domain knowledge.
+    difference: A knowledge base stores content; Personal Reasoning stores relations among evidence, context,
+      values, limits, and correction.
+human_multi_ai_bridge:
+  problem:
+  - Each specialized AI sees only a partial role of the same person.
+  - Different systems may infer inconsistent priorities from separate conversations.
+  - Task-specific memory can fragment the person's reasoning continuity.
+  - Style personalization alone cannot preserve standards of judgment.
+  function:
+  - provide a shared interpretive vocabulary
+  - preserve cross-domain principles without forcing identical outputs
+  - make the person's correction standards visible
+  - reduce superficial imitation of personality
+  - support transfer of intent between human and multiple AI systems
+  - keep the person distinct from any documented model
+  coherence_rule: AI systems may differ in domain conclusions, but should be able to explain how their
+    interpretation relates to the shared principles.
+interpretation_protocol:
+  role: non_operational_reflection_protocol
+  input:
+  - current situation or question
+  - available context
+  - relevant evidence
+  - applicable domain
+  - current version of this foundation
+  output:
+  - relevant principles
+  - conceptual distinctions
+  - assumptions made visible
+  - uncertainties
+  - affected-person considerations
+  - possible tensions between principles
+  - questions for further reflection
+  - criteria for evaluating later outputs
+  must_not_output:
+  - automatic workflow selection
+  - agent assignment
+  - tool call
+  - database mutation
+  - message dispatch
+  - binding judgment
+  - claim of representing the whole person
+  pseudocode:
+  - 'FUNCTION REFLECT(situation, context, evidence, domain):'
+  - '    foundation = LOAD_CURRENT_PERSONAL_REASONING_FOUNDATION()'
+  - '    principles = FIND_RELEVANT_PRINCIPLES(foundation, situation, domain)'
+  - '    distinctions = IDENTIFY_CONCEPTUAL_DISTINCTIONS(situation, principles)'
+  - '    assumptions = EXPOSE_ASSUMPTIONS(situation, context)'
+  - '    uncertainties = IDENTIFY_UNCERTAINTIES(evidence, context)'
+  - '    affected = IDENTIFY_POSSIBLY_AFFECTED_PERSONS(situation)'
+  - '    tensions = MAP_PRINCIPLE_TENSIONS(principles, situation)'
+  - '    questions = FORM_REFLECTION_QUESTIONS(assumptions, uncertainties, tensions)'
+  - '    criteria = DERIVE_EVALUATION_CRITERIA(principles, domain)'
+  - '    RETURN REASONING_REFERENCE(principles, distinctions, assumptions, uncertainties, affected, tensions,
+    questions, criteria)'
+  - END FUNCTION
+application_examples:
+- domain: HR
+  situation: A person is unsuitable for a current role.
+  relevant_principles:
+  - PR-004
+  - PR-005
+  - PR-006
+  interpretive_use: Separate human worth from role fit; examine affected parties; preserve a path for
+    reassignment, learning, or review.
+  not_an_instruction: The foundation does not decide whether to retain, transfer, or terminate the person.
+- domain: COO
+  situation: A task is urgent and resources are limited.
+  relevant_principles:
+  - PR-001
+  - PR-003
+  - PR-005
+  - PR-006
+  interpretive_use: Distinguish urgency claims from verified impact, identify who bears the load, and
+    consider reversibility.
+  not_an_instruction: The foundation does not choose the schedule or allocate resources.
+- domain: Religious advisory
+  situation: A user describes a conflict and asks who is religiously wrong.
+  relevant_principles:
+  - PR-001
+  - PR-002
+  - PR-003
+  - PR-005
+  interpretive_use: Separate one-sided reports from established facts, distinguish explanation from authority,
+    and preserve uncertainty.
+  not_an_instruction: The foundation does not issue a binding religious judgment.
+- domain: Research
+  situation: An experiment supports the preferred hypothesis.
+  relevant_principles:
+  - PR-002
+  - PR-003
+  - PR-007
+  interpretive_use: Distinguish supporting evidence from proof, keep alternative explanations visible,
+    and revise after critique.
+  not_an_instruction: The foundation does not select the statistical method or publish the result.
+- domain: Multi-agent AI
+  situation: HR AI and COO AI interpret the same team issue differently.
+  relevant_principles:
+  - PR-004
+  - PR-005
+  - PR-008
+  - PR-010
+  interpretive_use: Compare the different domain lenses against shared principles rather than forcing
+    identical conclusions.
+  not_an_instruction: The foundation does not appoint a winning agent or resolve operational authority.
+extension_protocol:
+  allowed_extensions:
+  - domain interpretation notes
+  - examples and counterexamples
+  - equation refinements
+  - glossary entries
+  - reflection questions
+  - evaluation rubrics
+  - case-derived revision proposals
+  prohibited_extensions:
+  - hidden operational commands
+  - automatic tool invocation
+  - unreviewed claims of personal identity
+  - private sensitive data not necessary to the principle
+  - unsupported universalization from a single event
+  - rules that override law, safety, or institutional authority
+  new_principle_requirements:
+  - at least one traceable experience or reason
+  - clear statement
+  - rationale
+  - scope
+  - counterexample
+  - revision trigger
+  - stability level
+  - owner review
+revision_protocol:
+  review_triggers:
+  - scheduled review date
+  - repeated mismatch between file and owner's current judgment
+  - material new evidence
+  - major life, role, or organizational change
+  - harm caused by application
+  - inconsistency between principles
+  - owner-requested correction
+  change_types:
+  - editorial
+  - clarification
+  - scope_change
+  - principle_revision
+  - new_principle
+  - deprecation
+  required_change_record:
+  - date
+  - author
+  - change_type
+  - affected_ids
+  - reason
+  - evidence_or_case
+  - expected_effect
+  - review_status
+  deprecation_rule: Deprecated principles remain traceable in history and must state the replacement or
+    reason for removal.
+writing_standard:
+  target_file_size:
+    recommended_words: 1,500-3,500
+    recommended_lines: 180-450
+    recommended_file_bytes: 12-35 KB
+    hard_guidance: If the foundation exceeds 4,500 words or 500 lines, move domain examples, cases, and
+      long commentary into extension files.
+  section_limits:
+    core_principles: 6-15 active principles
+    core_equations: 3-10 equations
+    application_examples: 3-12 concise examples
+    principle_statement_words: 8-30
+    rationale_words: 15-80
+    counterexample_words: 8-50
+  style:
+  - Use declarative, testable sentences.
+  - Write one main claim per principle.
+  - Prefer domain-neutral wording in the foundation.
+  - State boundaries and non-identity explicitly.
+  - Separate principle, rationale, example, and exception.
+  - Use equations to clarify relationships, not to create false mathematical precision.
+  - Use pseudocode only for reflection or interpretation, never hidden execution.
+  - Avoid motivational prose, biography, and repeated explanations.
+  - Use stable IDs for every principle and equation.
+  - Mark uncertainty and revision conditions.
+  yaml_format:
+    encoding: UTF-8
+    indent_spaces: 2
+    tabs_allowed: false
+    line_width: 100
+    key_style: snake_case
+    id_style: UPPERCASE-PREFIX-NNN
+    date_style: YYYY-MM-DD
+    quote_policy: Quote strings containing colon, hash, leading special characters, or ambiguous YAML
+      values.
+    multiline_policy: Use folded style (>) for long prose and literal style (|) for pseudocode or exact
+      formatting.
+    comments_policy: Use comments for navigation only; normative content must remain in data fields.
+quality_checks:
+- Does the file describe reusable reasoning rather than commands?
+- Can each principle be explained without referring to a single task?
+- Are Personal Reasoning, prompt, workflow, skill, memory, persona, and policy clearly distinguished?
+- Does every principle include rationale, scope, counterexample, revision trigger, and stability?
+- Does the file explicitly state PR_t != Person?
+- Are equations interpretive rather than pseudo-scientific decoration?
+- Does pseudocode stop at a reasoning reference rather than an action?
+- Can multiple AI systems use the principles without being forced into identical conclusions?
+- Can the owner challenge, revise, or deprecate any principle?
+- Are private or sensitive details excluded unless necessary and explicitly approved?
