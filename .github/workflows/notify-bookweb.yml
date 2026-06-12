@@ -1,0 +1,30 @@
+name: notify-bookweb
+
+# When books/knowledge change in cpg_book, tell cpg_bookweb to re-sync into Supabase.
+# Needs a repo secret BOOKWEB_DISPATCH_TOKEN = a PAT with `repo` scope on morrocwi/cpg_bookweb.
+# Fail-soft: if the secret is missing the step is skipped, the push still succeeds.
+
+on:
+  push:
+    branches: [main]
+
+permissions: {}
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger cpg_bookweb sync
+        env:
+          TOKEN: ${{ secrets.BOOKWEB_DISPATCH_TOKEN }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "BOOKWEB_DISPATCH_TOKEN not set — skipping dispatch"; exit 0
+          fi
+          curl -sf -X POST \
+            -H "Authorization: token $TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/morrocwi/cpg_bookweb/dispatches \
+            -d '{"event_type":"cpg_book_updated"}' \
+            && echo "dispatched cpg_book_updated -> cpg_bookweb" \
+            || echo "dispatch failed (ignored)"
